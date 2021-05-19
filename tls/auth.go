@@ -196,6 +196,8 @@ func signatureSchemesForCertificate(version uint16, cert *Certificate) []Signatu
 			return []SignatureScheme{ECDSAWithP384AndSHA384}
 		case elliptic.P521():
 			return []SignatureScheme{ECDSAWithP521AndSHA512}
+		case elliptic.Secp256k1():
+			return []SignatureScheme{ECDSAWithP256AndSHA256}
 		default:
 			return nil
 		}
